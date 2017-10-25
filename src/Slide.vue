@@ -77,10 +77,10 @@
                     ? parseInt((i + 1) * (this.parent.width / 1.5), 10)
                     : parseInt((i + 1) * (this.parent.space), 10)
                 const transform = (positive)
-                    ? 'translateX(' + (leftRemain) + 'px) translateZ(-' + z + 'px) ' +
-                    'rotateY(-' + y + 'deg)'
-                    : 'translateX(-' + (leftRemain) + 'px) translateZ(-' + z + 'px) ' +
-                    'rotateY(' + y + 'deg)'
+                    ? 'translateY(' + (leftRemain) + 'px) translateZ(-' + z + 'px) ' +
+                    'rotateX(-' + y + 'deg)'
+                    : 'translateY(-' + (leftRemain) + 'px) translateZ(-' + z + 'px) ' +
+                    'rotateX(' + y + 'deg)'
                 const top = this.parent.space === 'auto' ? 0 : parseInt((i + 1) * (this.parent.space))
 
                 return {

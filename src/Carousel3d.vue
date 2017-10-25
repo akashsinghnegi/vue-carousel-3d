@@ -119,7 +119,7 @@
                 total: 0,
                 lock: false,
                 dragOffset: 0,
-                dragStartX: 0,
+                dragStartY: 0,
                 mousedown: false,
                 zIndex: 998
             }
@@ -305,7 +305,7 @@
                 }
 
                 this.mousedown = true
-                this.dragStartX = ('ontouchstart' in window) ? e.touches[0].clientX : e.clientX
+                this.dragStartY = ('ontouchstart' in window) ? e.touches[0].clientY : e.clientY
             },
             /**
              * Trigger actions when mouse is pressed and then moved (mouse drag)
@@ -316,10 +316,10 @@
                     return
                 }
 
-                const eventPosX = ('ontouchstart' in window) ? e.touches[0].clientX : e.clientX
-                const deltaX = (this.dragStartX - eventPosX)
+                const eventPosY = ('ontouchstart' in window) ? e.touches[0].clientY : e.clientY
+                const deltaY = (this.dragStartY - eventPosY)
 
-                this.dragOffset = deltaX
+                this.dragOffset = deltaY
 
                 if (this.dragOffset > this.minSwipeDistance) {
                     this.handleMouseup()
@@ -435,18 +435,19 @@
 
 <style scoped>
     .carousel-3d-container {
-        min-height: 1px;
+        min-height: 364px;
+        height: 100%;
+        max-height: 364px;
         width: 100%;
         position: relative;
         z-index: 0;
-        overflow: hidden;
+        overflow-x: hidden;
         margin: 20px auto;
         box-sizing: border-box;
     }
-
     .carousel-3d-slider {
         position: relative;
-        margin: 0 auto;
+        margin: 5% auto;
         transform-style: preserve-3d;
         -webkit-perspective: 1000px;
         -moz-perspective: 1000px;
