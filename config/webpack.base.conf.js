@@ -12,7 +12,7 @@ var banner = [
 ].join('\n')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/Index.js',
     output: {
         path: path.resolve(__dirname, '../dist'),
         filename: 'vue-carousel-3d.js',
